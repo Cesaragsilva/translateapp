@@ -1,0 +1,9 @@
+<h2>{{ 'HOME.TITLE' | translate }}</h2> 
+
+<label>Escolha o idioma que você quer utilizar</label>
+<select #langSelect (change)="translate.use(langSelect.value)">
+  <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+</select>
+
+
+<!-- Va para o arquivo asset/i18n e para os arquivos app.module.ts e app.components.ts -->
